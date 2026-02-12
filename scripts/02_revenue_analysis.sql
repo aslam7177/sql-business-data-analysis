@@ -61,3 +61,69 @@ JOIN category c ON fc.category_id = c.category_id
 GROUP BY category_name
 ORDER BY category_revenue DESC;
 
+
+-- 6. Average Revenue per Rental
+-- ------------------------------------------------------------
+
+SELECT 
+    ROUND(SUM(p.amount) / COUNT(DISTINCT r.rental_id), 2) 
+    AS avg_revenue_per_rental
+FROM payment p
+JOIN rental r ON p.rental_id = r.rental_id;
+
+
+-- 7. Monthly Revenue Trend
+-- ------------------------------------------------------------
+
+SELECT 
+    DATE_FORMAT(payment_date, '%Y-%m') AS revenue_month,
+    ROUND(SUM(amount), 2) AS monthly_revenue
+FROM payment
+GROUP BY revenue_month
+ORDER BY revenue_month;
+
+
+-- 8. Revenue per Customer
+-- ------------------------------------------------------------
+
+SELECT 
+    customer_id,
+    ROUND(SUM(amount), 2) AS total_spent
+FROM payment
+GROUP BY customer_id
+ORDER BY total_spent DESC;
+
+
+-- 9A. Average Revenue per Customer (Direct Formula)
+-- ------------------------------------------------------------
+
+SELECT 
+    ROUND(SUM(amount) / COUNT(DISTINCT customer_id), 2)
+    AS avg_revenue_per_customer
+FROM payment;
+
+-- 9B. Average Revenue per Customer (Using Subquery)
+-- ------------------------------------------------------------
+
+SELECT 
+    ROUND(AVG(customer_total), 2) AS avg_revenue_per_customer
+FROM (
+    SELECT 
+        customer_id,
+        SUM(amount) AS customer_total
+    FROM payment
+    GROUP BY customer_id
+) t;
+
+
+
+-- 10. Revenue by Day of Week
+-- ------------------------------------------------------------
+
+SELECT 
+    DAYNAME(payment_date) AS day_of_week,
+    ROUND(SUM(amount), 2) AS total_revenue
+FROM payment
+GROUP BY day_of_week
+ORDER BY total_revenue DESC;
+
