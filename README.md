@@ -26,43 +26,39 @@ The project was designed to answer key business questions:
 
 ## Repository Structure
 
+### schema/
+- 01_sakila_tables_overview.sql  
+- 02_sakila_relationships.sql  
+- 03_sakila_data_dictionary.sql  
+- 04_sakila_indexes_constraints.sql  
+- sakila-schema.png  
+- sakila-structure-MySQL.png  
 
-sql-business-data-analysis/
-│
-├── schema/
-│   ├── 01_sakila_tables_overview.sql
-│   ├── 02_sakila_relationships.sql
-│   ├── 03_sakila_data_dictionary.sql
-│   ├── 04_sakila_indexes_constraints.sql
-│   ├── sakila-schema.png
-│   └── sakila-structure-MySQL.png
-│
-├── scripts/
-│   ├── 01_database_exploration.sql
-│   ├── 02_revenue_analysis.sql
-│   ├── 03_revenue_performance.sql
-│   ├── 04_customer_analysis.sql
-│   ├── 05_customer_performance.sql
-│   ├── 06_film_analysis.sql
-│   ├── 07_film_performance.sql
-│   ├── 08_time_analysis.sql
-│   ├── 09_time_performance.sql
-│   ├── 10_store_analysis.sql
-│   ├── 11_store_performance.sql
-│   └── 12_operational_efficiency.sql
-│
-├── insights/
-│   ├── 01_revenue_insights.md
-│   ├── 02_customer_insights.md
-│   ├── 03_film_insights.md
-│   ├── 04_store_insights.md
-│   ├── 05_time_insights.md
-│   └── 06_operational_insights.md
-│
-└── README.md
+### scripts/
+- 01_database_exploration.sql  
+- 02_revenue_analysis.sql  
+- 03_revenue_performance.sql  
+- 04_customer_analysis.sql  
+- 05_customer_performance.sql  
+- 06_film_analysis.sql  
+- 07_film_performance.sql  
+- 08_time_analysis.sql  
+- 09_time_performance.sql  
+- 10_store_analysis.sql  
+- 11_store_performance.sql  
+- 12_operational_efficiency.sql  
 
+### insights/
+- 01_revenue_insights.md  
+- 02_customer_insights.md  
+- 03_film_insights.md  
+- 04_store_insights.md  
+- 05_time_insights.md  
+- 06_operational_insights.md  
 
----
+### Root
+- README.md
+
 
 ## Technical Skills Demonstrated
 
